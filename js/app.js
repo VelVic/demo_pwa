@@ -1,6 +1,14 @@
-//Agregar bloque 1
+// sw producccion
+var url = window.location.href;
+var swLocation = '/Demo_pwa/sw.js';
+
+//Agregar bloque 1 sw desaroollo
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+
+    if(url.includes('localhost')){
+        swLocation = '/sw.js';
+    }
+    navigator.serviceWorker.register(swLocation);
 }
 
 // Referencias de jQuery
